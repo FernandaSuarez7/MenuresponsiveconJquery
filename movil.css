@@ -1,0 +1,75 @@
+/* ===== MÓVIL (<= 991px) ===== */
+@media (max-width:991px){
+
+  /* Botón hamburguesa a la derecha (verde) */
+  .btn_hamb{
+    display:inline-grid;
+    margin-left:auto;
+    width:36px; height:28px;
+    background:transparent; border:0; cursor:pointer;
+    position:relative;
+  }
+  .btn_hamb span,
+  .btn_hamb span::before,
+  .btn_hamb span::after{
+    content:"";
+    position:absolute; left:0; right:0;
+    height:3px; background:var(--verde);
+    border-radius:3px; transition:.2s ease;
+  }
+  .btn_hamb span{ top:50%; transform:translateY(-50%) }
+  .btn_hamb span::before{ top:-9px }
+  .btn_hamb span::after { top: 9px }
+
+  /* Menú desplegable con slideToggle */
+  .menu{
+    display:block;
+    width:100%;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    overflow:hidden;     /* necesario para el slide */
+    margin-top:10px;
+  }
+  .menu a{
+    display:block;
+    padding:14px 18px 18px;
+    color:#111;
+    background:#f3f3f3;      /* igual a tu gris de menú */
+    margin:10px;
+    border-radius:10px;
+    position:relative;
+  }
+  /* línea punteada al estilo de tu ejemplo */
+  .menu a::after{
+    content:"";
+    position:absolute; left:18px; right:18px; bottom:12px; height:1px;
+    background:repeating-linear-gradient(
+      to right,
+      #9aa 0, #9aa 2px,
+      transparent 2px, transparent 6px
+    );
+    opacity:.9;
+    pointer-events:none;
+  }
+
+  /* Hero texto más pequeño y margen igual a la maqueta */
+  .hero{height:auto}
+  .hero_overlay{align-items:flex-start}
+  .hero_overlay h1{
+    font-size:34px;
+    margin:18px; margin-top:22px;
+    text-shadow:0 8px 24px rgba(0,0,0,.40);
+  }
+
+  /* Servicios en columna */
+  .servicios{padding:40px 0 64px}
+  .servicios_grid{grid-template-columns:1fr; gap:22px}
+  .card{padding:28px 22px}
+  .card_icon{width:120px;height:120px}
+}
+
+/* ===== Teléfonos pequeños (<= 480px) ===== */
+@media (max-width:480px){
+  .hero_overlay h1{font-size:30px}
+}
